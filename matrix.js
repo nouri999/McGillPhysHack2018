@@ -35,7 +35,7 @@ class Matrix{
 		}
 		return new Vector(list);
 	}
-	scalar(c){
+	scale(c){
 		let temp_mat = []
 		for(let i = 0; i<this.n; i++){
 			temp_mat.push([])
@@ -54,6 +54,12 @@ class Matrix{
 			}
 		}
 		return new Matrix(temp_mat)
+	}
+	sub(otherMatrix){
+		return this.add(otherMatrix.scale(-1));
+	}
+	normalize(){
+		//TODO normalize the column vectors in the matrix
 	}
 	static iden(size){
 		let temp_mat = []
